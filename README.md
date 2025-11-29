@@ -14,7 +14,7 @@ Latest version available for each version of Angular
 
 | ngx-speculation-rules | Angular     |
 | --------------------- | ----------- |
-| 1.0.0                 | 19.x - 20.x |
+| 1.0.0                 | 18.x - 20.x |
 
 ## Features
 

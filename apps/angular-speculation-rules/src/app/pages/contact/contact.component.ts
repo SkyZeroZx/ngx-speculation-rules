@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'speculation-rules-contact',
   templateUrl: './contact.component.html',
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,

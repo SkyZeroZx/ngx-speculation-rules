@@ -55,9 +55,9 @@ export class SpeculationRulesBrowserService implements SpeculationRulesService {
    */
   insertRules(rules: SpeculationRules, id?: string): string | null {
     if (!this.isSupported.supported) {
-      isDevMode() &&
-        this.isBrowser &&
+      if (isDevMode() && this.isBrowser) {
         console.warn('Speculation Rules API not supported in this browser.');
+      }
       return null;
     }
 

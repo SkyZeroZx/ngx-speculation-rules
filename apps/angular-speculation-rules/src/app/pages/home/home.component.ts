@@ -5,7 +5,7 @@ import { SpeculationRulesService } from 'ngx-speculation-rules';
 import { BasicUsageComponent, DocumentationComponent } from '../../components';
 
 @Component({
-  selector: 'app-home',
+  selector: 'speculation-rules-home',
   templateUrl: './home.component.html',
   imports: [RouterLink, BasicUsageComponent, DocumentationComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
