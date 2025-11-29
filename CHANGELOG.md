@@ -1,3 +1,9 @@
+## 1.0.0 (2025-11-29)
+
+### Features
+
+* initial release ([5564452](https://github.com/SkyZeroZx/ngx-speculation-rules/commit/5564452e087dd2cdefde4f76e73f64ddb9fd3dd6))
+
 ## [1.5.1](https://github.com/SkyZeroZx/ngx-speculation-rules/compare/v1.5.0...v1.5.1) (2025-06-13)
 
 ### Bug Fixes
