@@ -1,0 +1,97 @@
+{
+  "name": "angular-speculation-rules",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "speculation-rules",
+  "sourceRoot": "apps/angular-speculation-rules/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular-speculation-rules",
+        "index": "apps/angular-speculation-rules/src/index.html",
+        "browser": "apps/angular-speculation-rules/src/main.ts",
+        "polyfills": [],
+        "tsConfig": "apps/angular-speculation-rules/tsconfig.app.json",
+        "assets": [
+          "apps/angular-speculation-rules/src/favicon.ico",
+          "apps/angular-speculation-rules/src/assets",
+          "apps/angular-speculation-rules/src/robots.txt"
+        ],
+        "styles": ["apps/angular-speculation-rules/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "angular-speculation-rules:build:production"
+        },
+        "development": {
+          "buildTarget": "angular-speculation-rules:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "continuous": true
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "angular-speculation-rules:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/angular-speculation-rules/**/*.ts",
+          "apps/angular-speculation-rules/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/angular-speculation-rules/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "angular-speculation-rules:build"
+      }
+    },
+    "deploy": {
+      "executor": "angular-cli-ghpages:deploy"
+    }
+  }
+}

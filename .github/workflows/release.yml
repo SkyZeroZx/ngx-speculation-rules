@@ -1,0 +1,26 @@
+name: RELEASE
+on: [workflow_dispatch]
+jobs:
+  main:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install deps
+        run: npm ci
+      - name: Lint
+        run: npx nx run-many -t lint
+      # - name: Build
+      #   run: npx nx run-many -t build
+      # - name: Test
+      #   run: npx nx run-many -t test --configuration=ci
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,29 @@
+<div class="text-center mb-10">
+  <h1 class="text-4xl font-extrabold text-gray-900">Products</h1>
+  <p class="mt-4 text-xl text-gray-500">Our features and capabilities</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+  @for (product of products; track product.id) {
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <h3 class="text-xl font-bold text-gray-800">{{ product.name }}</h3>
+      <p class="text-gray-600 mt-2">{{ product.description }}</p>
+      <p class="text-green-600 font-bold mt-4">{{ product.price }}</p>
+    </div>
+  }
+</div>
+
+<div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+  <div class="flex">
+    <div class="ml-3">
+      <p class="text-sm text-green-700">
+        <strong>🚀 Performance Tip:</strong> With speculation rules, users experience near-instant 
+        page loads because resources are already in the cache!
+      </p>
+    </div>
+  </div>
+</div>
+
+<a routerLink="/" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+  ← Back to Home
+</a>

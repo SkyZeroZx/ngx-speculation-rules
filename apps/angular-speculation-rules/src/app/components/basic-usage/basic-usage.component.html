@@ -1,0 +1,50 @@
+<section class="mt-10">
+  <h2 class="text-2xl font-extrabold text-gray-900">Interactive Demo</h2>
+  <p class="mt-2 text-gray-600">Try adding speculation rules dynamically:</p>
+
+  <div class="mt-6 flex flex-wrap gap-4">
+    <button
+      (click)="addPrefetchRule()"
+      class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+    >
+      Add Prefetch Rule
+    </button>
+    <button
+      (click)="addPrerenderRule()"
+      class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+    >
+      Add Prerender Rule
+    </button>
+    <button
+      (click)="clearRules()"
+      class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+    >
+      Clear All Rules
+    </button>
+  </div>
+
+  <div class="mt-8">
+    <h3 class="text-lg font-semibold text-gray-800">Code Example</h3>
+    <pre
+      class="mt-4 p-4 bg-gray-900 text-gray-100 rounded-lg overflow-x-auto"
+    ><code>// app.config.ts
+import &#123; provideSpeculationRules &#125; from 'ngx-speculation-rules';
+
+export const appConfig: ApplicationConfig = &#123;
+  providers: [
+    provideSpeculationRules(&#123;
+      autoInsert: true,
+      defaultRules: &#123;
+        prefetch: [&#123;
+          source: 'document',
+          eagerness: 'moderate',
+          where: &#123;
+            selector_matches: 'a[href^="/"]'
+          &#125;
+        &#125;]
+      &#125;
+    &#125;)
+  ]
+&#125;;</code></pre>
+  </div>
+</section>

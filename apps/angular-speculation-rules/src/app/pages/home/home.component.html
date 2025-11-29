@@ -1,0 +1,123 @@
+<div class="text-center">
+  <h1 class="text-4xl font-extrabold text-gray-900 sm:text-6xl">
+    Ngx Speculation Rules
+  </h1>
+  <p class="mt-5 text-xl text-gray-500">
+    Angular library for the Speculation Rules API - Prefetch & Prerender
+  </p>
+</div>
+
+<div class="mt-10 p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4">🔗 Demo Pages</h2>
+  <p class="text-gray-600 mb-4">
+    Hover over these links to trigger prefetching. Check DevTools to see it in
+    action!
+  </p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <a
+      routerLink="/about"
+      class="p-4 bg-blue-50 rounded-lg text-blue-700 hover:bg-blue-100 transition-colors text-center font-medium"
+    >
+      📄 About
+    </a>
+    <a
+      routerLink="/products"
+      class="p-4 bg-green-50 rounded-lg text-green-700 hover:bg-green-100 transition-colors text-center font-medium"
+    >
+      🛍️ Products
+    </a>
+    <a
+      routerLink="/contact"
+      class="p-4 bg-purple-50 rounded-lg text-purple-700 hover:bg-purple-100 transition-colors text-center font-medium"
+    >
+      📧 Contact
+    </a>
+    <a
+      routerLink="/blog"
+      class="p-4 bg-orange-50 rounded-lg text-orange-700 hover:bg-orange-100 transition-colors text-center font-medium"
+    >
+      📝 Blog
+    </a>
+  </div>
+</div>
+
+<!-- Browser Support -->
+<div class="mt-10 p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4">Browser Support</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div
+      class="p-4 rounded-lg"
+      [class]="isSupported.supported ? 'bg-green-100' : 'bg-red-100'"
+    >
+      <span class="font-semibold">API Supported:</span>
+      <span class="ml-2">{{ isSupported.supported ? '✅ Yes' : '❌ No' }}</span>
+    </div>
+    <div
+      class="p-4 rounded-lg"
+      [class]="isSupported.prefetchSupported ? 'bg-green-100' : 'bg-red-100'"
+    >
+      <span class="font-semibold">Prefetch:</span>
+      <span class="ml-2">{{
+        isSupported.prefetchSupported ? '✅ Yes' : '❌ No'
+      }}</span>
+    </div>
+    <div
+      class="p-4 rounded-lg"
+      [class]="isSupported.prerenderSupported ? 'bg-green-100' : 'bg-red-100'"
+    >
+      <span class="font-semibold">Prerender:</span>
+      <span class="ml-2">{{
+        isSupported.prerenderSupported ? '✅ Yes' : '❌ No'
+      }}</span>
+    </div>
+  </div>
+  @if (isPrerendering) {
+    <div class="mt-4 p-4 bg-blue-100 rounded-lg">
+      <span class="font-semibold"
+        >🔄 This page is currently being prerendered</span
+      >
+    </div>
+  }
+</div>
+
+<div class="mt-10 p-6 bg-white rounded-lg shadow-md border-l-4">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4">
+    🔧 How to View in DevTools
+  </h2>
+  <div class="space-y-4">
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+      <h3 class="font-bold text-lg text-gray-800 mb-2">
+        1. Open Chrome DevTools (F12)
+      </h3>
+      <p class="text-gray-600">Right-click → Inspect or press F12</p>
+    </div>
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+      <h3 class="font-bold text-lg text-gray-800 mb-2">2. Go to Network Tab</h3>
+      <p class="text-gray-600">
+        Watch for prefetch requests when hovering over links above
+      </p>
+    </div>
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+      <h3 class="font-bold text-lg text-gray-800 mb-2">
+        3. Check Application Tab → Speculations
+      </h3>
+      <p class="text-gray-600">
+        View active speculation rules and their status
+      </p>
+    </div>
+    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+      <h3 class="font-bold text-lg text-gray-800 mb-2">
+        4. Filter by "speculationrules"
+      </h3>
+      <p class="text-gray-600">
+        In Elements tab, search for
+        <code class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+          >script[type="speculationrules"]</code
+        >
+      </p>
+    </div>
+  </div>
+</div>
+
+<speculation-rules-basic-usage />
+<speculation-rules-documentation />

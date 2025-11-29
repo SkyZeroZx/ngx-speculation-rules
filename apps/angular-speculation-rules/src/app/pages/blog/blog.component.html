@@ -1,0 +1,47 @@
+<div class="text-center mb-10">
+  <h1 class="text-4xl font-extrabold text-gray-900">Blog</h1>
+  <p class="mt-4 text-xl text-gray-500">Latest articles and tutorials</p>
+</div>
+
+<div class="space-y-6 mb-6">
+  @for (post of posts; track post.id) {
+    <article
+      class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+    >
+      <div class="flex justify-between items-start">
+        <h2 class="text-xl font-bold text-gray-800">{{ post.title }}</h2>
+        <span class="text-sm text-gray-500">{{ post.date }}</span>
+      </div>
+      <p class="text-gray-600 mt-2">{{ post.excerpt }}</p>
+      <button class="mt-4 text-blue-600 hover:text-blue-800 font-medium">
+        Read more →
+      </button>
+    </article>
+  }
+</div>
+
+<div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+  <div class="flex">
+    <div class="ml-3">
+      <p class="text-sm text-blue-700">
+        <strong>📖 Documentation:</strong> Check the
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API"
+          class="underline"
+          target="_blank"
+          rel="noopener"
+        >
+          MDN Web Docs
+        </a>
+        for complete Speculation Rules API reference.
+      </p>
+    </div>
+  </div>
+</div>
+
+<a
+  routerLink="/"
+  class="inline-flex items-center text-blue-600 hover:text-blue-800"
+>
+  ← Back to Home
+</a>

@@ -1,0 +1,30 @@
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a
+        routerLink="/"
+        class="text-xl font-bold text-gray-900 hover:text-blue-600"
+      >
+        ngx-speculation-rules
+      </a>
+      <div class="flex gap-4">
+        <a routerLink="/about" class="text-gray-600 hover:text-blue-600"
+          >About</a
+        >
+        <a routerLink="/products" class="text-gray-600 hover:text-blue-600"
+          >Products</a
+        >
+        <a routerLink="/blog" class="text-gray-600 hover:text-blue-600">Blog</a>
+        <a routerLink="/contact" class="text-gray-600 hover:text-blue-600"
+          >Contact</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-24 pb-12 flex items-center justify-center">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <router-outlet />
+  </div>
+</main>

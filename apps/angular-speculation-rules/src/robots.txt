@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://skyzerozx.github.io/ngx-speculation-rules

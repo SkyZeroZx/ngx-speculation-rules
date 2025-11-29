@@ -1,0 +1,118 @@
+<section class="mt-10 bg-gray-100 rounded-lg">
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Provider Configuration</h1>
+    <table class="table-auto w-full bg-white shadow-md rounded-lg">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2">Option</th>
+          <th class="px-4 py-2">Type</th>
+          <th class="px-4 py-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2">autoInsert</td>
+          <td class="px-4 py-2 font-bold">boolean</td>
+          <td class="px-4 py-2">
+            Automatically insert default rules on initialization.
+          </td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">defaultRules</td>
+          <td class="px-4 py-2 font-bold">SpeculationRules</td>
+          <td class="px-4 py-2">Default speculation rules to apply.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+    <h1 class="text-2xl font-bold mb-4">Service Methods</h1>
+    <table class="table-auto w-full bg-white shadow-md rounded-lg">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2">Method</th>
+          <th class="px-4 py-2">Return Type</th>
+          <th class="px-4 py-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2">insertRules(rules, id?)</td>
+          <td class="px-4 py-2 font-bold">string | null</td>
+          <td class="px-4 py-2">
+            Insert speculation rules into the document. Returns the script ID.
+          </td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">removeRules(id)</td>
+          <td class="px-4 py-2 font-bold">boolean</td>
+          <td class="px-4 py-2">Remove previously inserted rules by ID.</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">clearAllRules()</td>
+          <td class="px-4 py-2 font-bold">void</td>
+          <td class="px-4 py-2">
+            Remove all speculation rules from the document.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+    <h1 class="text-2xl font-bold mb-4">Service Properties</h1>
+    <table class="table-auto w-full bg-white shadow-md rounded-lg">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2">Property</th>
+          <th class="px-4 py-2">Type</th>
+          <th class="px-4 py-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2">isSupported</td>
+          <td class="px-4 py-2 font-bold">SpeculationSupport</td>
+          <td class="px-4 py-2">
+            Check browser support for Speculation Rules API.
+          </td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">isPrerendering</td>
+          <td class="px-4 py-2 font-bold">boolean</td>
+          <td class="px-4 py-2">
+            Check if the document is currently prerendering.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br />
+    <h1 class="text-2xl font-bold mb-4">Eagerness Levels</h1>
+    <table class="table-auto w-full bg-white shadow-md rounded-lg">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2">Level</th>
+          <th class="px-4 py-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-4 py-2">immediate</td>
+          <td class="px-4 py-2">Speculate as soon as possible.</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">eager</td>
+          <td class="px-4 py-2">Speculate on any small positive signal.</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">moderate</td>
+          <td class="px-4 py-2">Speculate on hover for 200ms.</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">conservative</td>
+          <td class="px-4 py-2">Speculate only on pointer/touch down.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

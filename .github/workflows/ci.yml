@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches:
+      - '*'
+      - '*/*'
+      - '**'
+      - '!main'
+jobs:
+  main:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v3
+      - name: Install deps
+        run: npm i
+      - name: Lint affected
+        run: npx nx affected -t lint
+      - name: Build affected
+        run: npx nx affected -t build
